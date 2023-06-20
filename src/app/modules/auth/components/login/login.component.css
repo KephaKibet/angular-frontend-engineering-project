@@ -87,7 +87,7 @@ button:disabled{
     display:none;
   }
   .login-container{
-    width: 400px;
+    width:80%;
   }
   .login-form{
     display: flex;
@@ -95,5 +95,4 @@ button:disabled{
     width: 100%;
     align-items:center;
   }
-
 }
