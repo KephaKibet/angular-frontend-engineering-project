@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
 import { MovieInterface, SearchedMovieInterface } from '../../interfaces/movie.interface';
 import { Store } from '@ngrx/store';
 import { setMoviesAction } from 'src/app/STATE/movies/movies.actions';
@@ -18,7 +17,6 @@ export class MoviesService {
 
 searchTerm = new BehaviorSubject<string | null>(null);
 
-
   getUpcomingMovies(): void {
     const url = 'https://moviesdatabase.p.rapidapi.com/titles/x/upcoming';
     const headers = {
@@ -27,11 +25,14 @@ searchTerm = new BehaviorSubject<string | null>(null);
     };
 
     this.httpClient.get(url, { headers }).subscribe((response:any) => {
-      const movies = response.results as MovieInterface[]; // Assuming the response is an array of movies
-
-      this.store.dispatch(setMoviesAction({movies: movies}));
+      const movies = response.results as MovieInterface[];
+      console.log("movie");
+       // Assuming the response is an array of movies
+      this.store.dispatch(setMoviesAction( {movies: movies} ));
     });
   }
+
+
 
   searchMovie(searchTerm:string): Observable<SearchedMovieInterface[]> {
     const url = 'http://www.omdbapi.com';
