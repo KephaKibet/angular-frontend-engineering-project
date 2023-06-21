@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-frontend-engineering-project": {
+    "angular-movie-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-frontend-engineering-project",
+            "outputPath": "dist/angular-movie-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -25,7 +25,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },
@@ -60,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-frontend-engineering-project:build:production"
+              "browserTarget": "angular-movie-app:build:production"
             },
             "development": {
-              "browserTarget": "angular-frontend-engineering-project:build:development"
+              "browserTarget": "angular-movie-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-frontend-engineering-project:build"
+            "browserTarget": "angular-movie-app:build"
           }
         },
         "test": {
@@ -87,7 +88,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           }
@@ -96,6 +98,6 @@
     }
   },
   "cli": {
-    "analytics": "59c26bae-a9ae-448c-ab5d-6227e2ca115c"
+    "analytics": false
   }
 }
