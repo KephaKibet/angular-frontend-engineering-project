@@ -1,12 +1,44 @@
 <div class="suggestions-container">
   <div class="suggestions-form">
-    <form class="form">
-      <label for="type">Type</label>
-      <input class="movie-type" placeholder="Type of Movie" type="text">
+    <form class="form" [formGroup]="form" (ngSubmit)="submit()">
+      <div> <input type="radio" id="new-movie" [checked]="form.value.movieCategory === 'new-movie'"
+          formControlName="movieCategory" value="New-movie">
+        <label for="new-movie">New Movie</label><br>
+
+        <input type="radio" id="part2" [checked]="form.value.movieCategory === 'part2'" formControlName="movieCategory"
+          value="part2">
+        <label for="css">Recommend Part 2</label><br>
+      </div>
+
+      <input class="movie-type" formControlName="movieType" placeholder="Type of Movie i.e., action" type="text">
       <label placeholder="Type of Movie" for="type">Reason</label>
-      <textarea class="reason" for="reason">Reason</textarea>
-      <button class="upload">upload image</button>
+
+      <textarea class="reason" for="reason" formControlName="reason">Reason</textarea>
+
+      <label class="upload">
+        <input type="file" class="upload-input" (change)="onFileSelected($event)" accept="image/*">
+        <span>Upload Image</span>
+      </label>
       <button class="submit">Submit Suggestion </button>
     </form>
+    <hr>
+
+    <div>
+      <h3>Suggested Movies</h3>
+    </div>
+
+
+    <table *ngFor="let movie of suggestedMovies">
+      <tr>
+        <th>Movie Category</th>
+        <th>Movie Type</th>
+        <th>Reason</th>
+      </tr>
+      <tr *ngFor="let movie of suggestedMovies">
+        <td>{{movie.movieCategory}}</td>
+        <td>{{movie.movieType}}</td>
+        <td>{{movie.reason}}</td>
+      </tr>
+    </table>
   </div>
 </div>

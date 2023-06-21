@@ -28,7 +28,11 @@ body {
   align-items: right;
   background-color: aliceblue;
 }
-
+small{
+  color: red;
+  margin-left: 15px;
+  font-weight: bold;
+}
 .login-form label{
   font-size: 1rem;
   margin:40px 10px 0px 10px;

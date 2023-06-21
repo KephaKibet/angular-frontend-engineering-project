@@ -17,8 +17,8 @@ export class AuthService {
   ) { }
 
   login(user: LoginInterface){
-    const storedEmail = 'kepha123@gmail.com';
-    const storedPassword = '123123';
+    const storedEmail = 'yourname@gmail.com';
+    const storedPassword ='Password.0707';
 
     if(user.email !== storedEmail || user.password  !== storedPassword){
       this.notificationService.showError({message: 'Wrong Email or Password'});

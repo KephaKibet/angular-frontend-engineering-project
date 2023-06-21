@@ -76,6 +76,28 @@ span {
   cursor: pointer;
 }
 
+button:hover{
+  color: #053941;
+  background-color:white;
+  border:1px solid #053941;
+}
+
+button{
+  cursor: pointer;
+  padding: 12px 30px;
+  width:100px;
+  margin:10px 0 0 10px;
+  background-color: #053941;
+  color: white;
+  height: 40px;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: justify;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
 .movie:hover .tittletext {
   height: 70px;
   /* margin-bottom: 10px; */

@@ -4,7 +4,7 @@
   width: 70%;
   border-radius: 2px;
   box-shadow:3px 3px 5px #053941;
-} 
+}
 .suggestions-form{
   padding: 10px;
   display: flex;
@@ -45,8 +45,13 @@ outline: none;
   border-radius: 5px;
   outline: none;
   }
-  
-  button{
+
+  #part2{
+    margin-bottom: 20px;
+  }
+
+  button,
+  .upload{
     cursor: pointer;
     padding: 12px 30px;
     width:80%;
@@ -58,9 +63,38 @@ outline: none;
     border: none;
     border-radius: 5px;
   }
-  
-  button:hover{
+.upload{
+  width: auto;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+  button:hover,
+  .upload:hover{
     color: #053941;
     background-color:white;
     border:1px solid #053941;
+  }
+
+  .upload-input{
+    display: none;
+
+  }
+
+  /*suggestions table */
+
+  table {
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
   }
