@@ -81,7 +81,7 @@ this.getSuggestedMovies().pipe(take(1)).subscribe((movies)=>{
 
 
   searchMovie(searchTerm:string): Observable<SearchedMovieInterface[]> {
-    const url = 'http://www.omdbapi.com';
+    const url = 'https://www.omdbapi.com';
     const params = {
       s: searchTerm,
       apikey: 'f91ddec1'
