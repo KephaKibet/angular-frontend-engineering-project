@@ -86,19 +86,17 @@ body{
 	position: relative;
 }
 
-.nav-container nav ul li a:hover{
+.nav-container nav ul li  a:hover{
 	color: #0c7db1;
 	background:white;
   border-right: 2px solid rgb(5, 68, 104);
 }
 
-.nav-container nav ul li a:hover {
+.nav-container nav ul li .active{
 	color: #0c7db1;
+	background:white;
+  border-right: 2px solid rgb(5, 68, 104);
 }
-
-/* .nav-container input[type="checkbox"]:checked ~ nav {
-  width:0px;
-} */
 
 input[type="checkbox"]{
 	display:none;
@@ -116,13 +114,16 @@ input[type="checkbox"]{
 
 
 @media only screen and (max-width: 600px) {
-
+   /* collapse nav on small width screens */
 	.nav-container input[type="checkbox"]:checked ~ nav {
 		width:0px;
 	}
+	/* remove router outlet offset */
 	.main-layout{
-		margin-top: 60px;
 		margin-left: 0px;
+	}
+	nav{
+		width: 0;
 	}
 }
 

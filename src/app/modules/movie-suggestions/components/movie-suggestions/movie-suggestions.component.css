@@ -1,7 +1,7 @@
 .suggestions-container{
-  height: 65%px;
+  height: 80%;
   margin: 10px;
-  width: 70%;
+  width: 80%;
   border-radius: 2px;
   box-shadow:3px 3px 5px #053941;
 }
@@ -17,7 +17,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 65%;
   padding: 5px;
   align-items: right;
 }
@@ -91,10 +91,19 @@ outline: none;
     padding: 8px;
   }
 
-  table {
+  /* table {
     border-collapse: collapse;
-  }
+  } */
   th, td {
     border: 1px solid black;
     padding: 8px;
   }
+
+  @media only screen and (max-width: 600px) {
+    /* set width of suggestion container to 80% of vh/w */
+    .suggestions-container{
+      height: 80%;
+      width: 80%;
+    }
+   }
+  
