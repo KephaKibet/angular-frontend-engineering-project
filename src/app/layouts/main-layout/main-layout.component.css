@@ -20,6 +20,11 @@ body{
 	width: 100%;
 	position:fixed;
 	left: 0;
+	z-index: 1000;
+}
+
+.nav-container nav .hide-sidebar {
+	width: 0;
 }
 
 .nav-container div{
@@ -29,7 +34,7 @@ body{
 	box-shadow: .5px .1px 4px 1px #053941;
 }
 
-.nav-container nav {
+.nav-container nav  {
 	background: #053941;
 	position: fixed;
 	top:60px;

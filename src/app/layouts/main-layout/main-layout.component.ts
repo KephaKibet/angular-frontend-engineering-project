@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Renderer2  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -12,10 +12,18 @@ import { RouterModule } from '@angular/router';
 })
 export class MainLayoutComponent {
 
-  isRevealed: boolean = false;
-
-  revealUserInfo() {
-    this.isRevealed = !this.isRevealed;
+  constructor(private renderer: Renderer2) {
+    
   }
+
+  ngOnInit() {
+    const isMobile = window.matchMedia('(max-width: 600px)').matches;
+    if (isMobile) {
+      const sidebarElement = document.getElementsByTagName('nav');
+      this.renderer.addClass(sidebarElement, 'hide-sidebar');
+    }
+  }
+
+
 
 }
